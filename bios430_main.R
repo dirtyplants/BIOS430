@@ -1,10 +1,19 @@
-# last modified August 24th, 2020.
-# created by karolis, modified by boris
-# evoswirl FA2020
+# last modified by dirtyplants on January 7th, 2024.
+# major modifications and all autosetup by karolisr
 #
-# requires: https://igic.lab.uic.edu/courses/BIOS430/r/evoswirl_2020.08.27.zip (Windows binary)
-# requires: https://igic.lab.uic.edu/courses/BIOS430/r/evoswirl_2020.08.27.tgz (Mac binary)
-# requires: https://igic.lab.uic.edu/courses/BIOS430/r/evoswirl_2020.08.27.tar.gz (source)
+# evoswirl FA2020 last stable version, now moved to github.com/dirtyplants/BIOS430
+#
+# https://stackoverflow.com/questions/35720660/how-to-use-an-r-script-from-github
+#
+# requires these platform-specific files:
+#
+# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2020.08.27.zip?raw=TRUE
+# (Windows binary)
+#
+# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2020.08.27.tgz?raw=TRUE
+# (Mac binary)
+#
+# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2020.08.27.tar.gz?raw=TRUE (source)
 #
 install.missing <- function(packages, ...) {
   new.packages <- packages[!(packages %in% installed.packages()[,'Package'])]
@@ -20,14 +29,14 @@ if (os.type == 'Windows') {
 
   writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = '~/.Renviron')
   install.missing(c('devtools', 'httr', 'rvest', 'stringi', 'stringr', 'testthat', 'xml2', 'yaml', 'base64enc', 'RCurl', 'XML', 'ggplot2'), quiet=FALSE, verbose=TRUE, type='win.binary')
-  install.packages(paste0('https://igic.lab.uic.edu/courses/BIOS430/r/evoswirl_', eswirl.version, '.zip'), type='win.binary', repos=NULL, quiet=TRUE, verbose=FALSE)
-  # install.packages(paste0('https://igic.lab.uic.edu/courses/BIOS430/r/evoswirl_', eswirl.version, '.tar.gz'), type='source', repos=NULL, quiet=TRUE, verbose=FALSE)
+  install.packages(paste0('https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_', eswirl.version, '.zip'), type='win.binary', repos=NULL, quiet=TRUE, verbose=FALSE)
+  # install.packages(paste0('https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_', eswirl.version, '.tar.gz?raw=TRUE'), type='source', repos=NULL, quiet=TRUE, verbose=FALSE)
 
 } else {
 
   install.missing(c('devtools', 'httr', 'rvest', 'stringi', 'stringr', 'testthat', 'xml2', 'yaml', 'base64enc', 'RCurl', 'XML', 'ggplot2'), quiet=FALSE, verbose=TRUE)
-  install.packages(paste0('https://igic.lab.uic.edu/courses/BIOS430/r/evoswirl_', eswirl.version, '.tgz'), type='mac.binary', repos=NULL, quiet=TRUE, verbose=FALSE)
-  # install.packages(paste0('https://igic.lab.uic.edu/courses/BIOS430/r/evoswirl_', eswirl.version, '.tar.gz'), type='source', repos=NULL, quiet=TRUE, verbose=FALSE)
+  install.packages(paste0('https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_', eswirl.version, '.tgz'), type='mac.binary', repos=NULL, quiet=TRUE, verbose=FALSE)
+  # install.packages(paste0('https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_', eswirl.version, '.tar.gz?raw=TRUE'), type='source', repos=NULL, quiet=TRUE, verbose=FALSE)
 
 }
 
