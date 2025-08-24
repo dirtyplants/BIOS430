@@ -2,7 +2,8 @@
 #
 # evoswirl FA2020 was the last stable version
 # now moved to github.com/dirtyplants/BIOS430
-# (evoswirl_2025.08.21.*)
+# 
+# Source this file with "?raw=TRUE"
 #
 # https://stackoverflow.com/questions/35720660/how-to-use-an-r-script-from-github
 #
