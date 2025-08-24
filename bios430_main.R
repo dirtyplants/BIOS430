@@ -9,13 +9,13 @@
 #
 # requires these platform-specific files with '?raw=TRUE' suffix for calls to github:
 #
-# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2025.08.21.zip?raw=TRUE
+# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2025.08.24.zip?raw=TRUE
 # (Windows binary)
 #
-# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2025.08.21.tgz?raw=TRUE
+# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2025.08.24.tgz?raw=TRUE
 # (Mac binary)
 #
-# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2025.08.21.tar.gz?raw=TRUE (source)
+# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2025.08.24.tar.gz?raw=TRUE (source)
 #
 install.missing <- function(packages, ...) {
   new.packages <- packages[!(packages %in% installed.packages()[,'Package'])]
@@ -24,7 +24,7 @@ install.missing <- function(packages, ...) {
   }
 }
 
-eswirl.version <- '2025.08.21'
+eswirl.version <- '2025.08.24'
 os.type <- as.character(Sys.info()['sysname'])
 
 if (os.type == 'Windows') {
