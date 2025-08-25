@@ -1,21 +1,20 @@
 # last modified by dirtyplants on Aug. 21, 2025.
 #
-# evoswirl FA2020 was the last stable version
-# now moved to github.com/dirtyplants/BIOS430
 # 
-# Source this file with "?raw=TRUE"
+# (1) Change locations to https://raw.githubusercontent.com/dirtyplants/BIOS430/main/* # OR
+# (2) Source this file with "?raw=TRUE"
 #
 # https://stackoverflow.com/questions/35720660/how-to-use-an-r-script-from-github
 #
 # requires these platform-specific files with '?raw=TRUE' suffix for calls to github:
 #
-# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2025.08.24.zip?raw=TRUE
+# https://raw.githubusercontent.com/dirtyplants/BIOS430/main/evoswirl_2025.08.24.zip
 # (Windows binary)
 #
-# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2025.08.24.tgz?raw=TRUE
+# https://raw.githubusercontent.com/dirtyplants/BIOS430/main/evoswirl_2025.08.24.tgz
 # (Mac binary)
 #
-# https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_2025.08.24.tar.gz?raw=TRUE (source)
+# https://raw.githubusercontent.com/dirtyplants/BIOS430/main/evoswirl_2025.08.24.tar.gz (source)
 #
 install.missing <- function(packages, ...) {
   new.packages <- packages[!(packages %in% installed.packages()[,'Package'])]
@@ -28,18 +27,14 @@ eswirl.version <- '2025.08.24'
 os.type <- as.character(Sys.info()['sysname'])
 
 if (os.type == 'Windows') {
-
   writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = '~/.Renviron')
   install.missing(c('devtools', 'httr', 'rvest', 'stringi', 'stringr', 'testthat', 'xml2', 'yaml', 'base64enc', 'RCurl', 'XML', 'ggplot2'), quiet=FALSE, verbose=TRUE, type='win.binary')
-  install.packages(paste0('https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_', eswirl.version, '.zip?raw=TRUE'), type='win.binary', repos=NULL, quiet=TRUE, verbose=FALSE)
-  # install.packages(paste0('https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_', eswirl.version, '.tar.gz?raw=TRUE'), type='source', repos=NULL, quiet=TRUE, verbose=FALSE)
+  install.packages(paste0('https://raw.githubusercontent.com/dirtyplants/BIOS430/main/evoswirl_', eswirl.version, '.zip'), type='win.binary', repos=NULL, quiet=TRUE, verbose=FALSE)
 
 } else {
 
   install.missing(c('devtools', 'httr', 'rvest', 'stringi', 'stringr', 'testthat', 'xml2', 'yaml', 'base64enc', 'RCurl', 'XML', 'ggplot2'), quiet=FALSE, verbose=TRUE)
-  install.packages(paste0('https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_', eswirl.version, '.tgz?raw=TRUE'), type='mac.binary', repos=NULL, quiet=TRUE, verbose=FALSE)
-  # install.packages(paste0('https://github.com/dirtyplants/BIOS430/blob/main/evoswirl_', eswirl.version, '.tar.gz?raw=TRUE'), type='source', repos=NULL, quiet=TRUE, verbose=FALSE)
-
+  install.packages(paste0('https://raw.githubusercontent.com/dirtyplants/BIOS430/main/evoswirl_', eswirl.version, '.tgz'), type='mac.binary', repos=NULL, quiet=TRUE, verbose=FALSE)
 }
 
 FILE_SEP <<- .Platform$file.sep
