@@ -1,4 +1,4 @@
-# last modified by dirtyplants on Aug. 21, 2025.
+# last modified by dirtyplants on Aug. 24, 2025.
 #
 # 
 # (1) Change locations to https://raw.githubusercontent.com/dirtyplants/BIOS430/main/* # OR
